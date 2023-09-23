@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dynfap08bljhi"]
+[gd_scene load_steps=4 format=3 uid="uid://dynfap08bljhi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3otg"]
 albedo_color = Color(0.176471, 0.392157, 0.247059, 1)
@@ -7,5 +7,15 @@ albedo_color = Color(0.176471, 0.392157, 0.247059, 1)
 material = SubResource("StandardMaterial3D_r3otg")
 size = Vector3(4, 0.1, 4)
 
-[node name="Grama" type="MeshInstance3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_jrpg6"]
+size = Vector3(4, 0.1, 4)
+
+[node name="Grama" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Malha" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_vods2")
+
+[node name="Colisao" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_jrpg6")
