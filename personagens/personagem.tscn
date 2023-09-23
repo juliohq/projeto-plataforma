@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://e4mlbhw1vws3"]
+
+[ext_resource type="PackedScene" uid="uid://cvfrvtj8ag4o1" path="res://modelos/personagens/barbarian.glb" id="1_8wgg8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_250ga"]
+size = Vector3(1, 2, 1)
+
+[node name="Personagem" type="CharacterBody3D"]
+
+[node name="Modelo" parent="." instance=ExtResource("1_8wgg8")]
+
+[node name="Colisao" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_250ga")
