@@ -25,9 +25,69 @@ current = true
 [node name="Ambiente" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_whal4")
 
-[node name="Grama" parent="." instance=ExtResource("2_sn4ti")]
-
 [node name="Sol" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 4)
 
 [node name="Personagem" parent="." instance=ExtResource("3_o6ih6")]
+
+[node name="Grama" parent="." instance=ExtResource("2_sn4ti")]
+
+[node name="Grama2" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="Grama3" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Grama4" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Grama5" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="Grama6" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="Grama7" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Grama10" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="Grama11" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+
+[node name="Grama12" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22)
+
+[node name="Grama8" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="Grama9" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+
+[node name="Grama13" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
+
+[node name="Grama14" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -32)
+
+[node name="Grama15" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -32)
+
+[node name="Grama16" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -28)
+
+[node name="Grama17" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -28)
+
+[node name="Grama18" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -28)
+
+[node name="Grama19" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36)
+
+[node name="Grama20" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -36)
+
+[node name="Grama21" parent="." instance=ExtResource("2_sn4ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -36)
