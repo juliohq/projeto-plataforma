@@ -20,6 +20,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		velocity.y = 0.0
 	else:
-		velocity.y -= GRAVIDADE
+		# F = m * a (gravidade é uma aceleração, não uma velocidade)
+		velocity.y -= GRAVIDADE * delta
 	
 	move_and_slide()
