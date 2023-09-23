@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccykbjcvdm5y7"]
+[gd_scene load_steps=6 format=3 uid="uid://ccykbjcvdm5y7"]
 
 [ext_resource type="Script" path="res://niveis/nivel.gd" id="1_v5hbb"]
+[ext_resource type="PackedScene" uid="uid://dynfap08bljhi" path="res://niveis/grama.tscn" id="2_sn4ti"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_77t37"]
 sky_top_color = Color(0.47451, 0.878431, 1, 1)
@@ -17,7 +18,13 @@ sky = SubResource("Sky_0ok1h")
 script = ExtResource("1_v5hbb")
 
 [node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
 current = true
 
 [node name="Ambiente" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_whal4")
+
+[node name="Grama" parent="." instance=ExtResource("2_sn4ti")]
+
+[node name="Sol" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 4)
