@@ -28,8 +28,14 @@ func _physics_process(delta):
 	velocity.z = direcao.y * VELOCIDADE
 	
 	# Girar o personagem
-	if direcao:
-		olhar = direcao
+	if is_on_floor():
+		if direcao:
+			olhar = direcao
+			
+			if Animacao.current_animation != "Running_A":
+				Animacao.play("Running_A")
+		elif Animacao.current_animation != "Idle":
+			Animacao.play("Idle")
 	
 	Modelo.rotation.y = lerp_angle(Modelo.rotation.y, -olhar.angle() + (PI / 2.0), VELOCIDADE_GIRO * delta)
 	
@@ -39,5 +45,8 @@ func _physics_process(delta):
 	else:
 		# F = m * a (gravidade é uma aceleração, não uma velocidade)
 		velocity.y -= GRAVIDADE * delta
+		
+		if Animacao.current_animation != "Jump_Idle":
+			Animacao.play("Jump_Idle")
 	
 	move_and_slide()
