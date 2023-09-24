@@ -19,6 +19,9 @@ func _ready():
 	# Essa parte do código corrige esse problema
 	for anim in Animacao.get_animation_list():
 		Animacao.get_animation(anim).loop_mode = Animation.LOOP_LINEAR
+	
+	# Suavizar transição entre animações
+	Animacao.playback_default_blend_time = 0.1
 
 
 func _unhandled_input(event):
