@@ -5,6 +5,7 @@ const GRAVIDADE = 64.0
 const VELOCIDADE = 16.0
 const VELOCIDADE_GIRO = 2.0 * PI
 const ALTURA_PULO = 24.0
+const ALTURA_MINIMA = -100.0
 
 var olhar = Vector2()
 
@@ -62,5 +63,8 @@ func _physics_process(delta):
 		
 		if Animacao.current_animation != "Jump_Idle":
 			Animacao.play("Jump_Idle")
+	
+	if position.y <= ALTURA_MINIMA:
+		Globais.game_over.emit()
 	
 	move_and_slide()
