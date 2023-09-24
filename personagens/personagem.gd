@@ -8,10 +8,16 @@ const VELOCIDADE_GIRO = 2.0 * PI
 var olhar = Vector2()
 
 @onready var Modelo = $Modelo
+@onready var Animacao = $Modelo/AnimationPlayer
 
 
 func _ready():
 	Globais.personagem = self
+	
+	# Na Godot 4, as animações de alguns formatos de modelo 3D (GLTF, por exemplo) não se repetem automaticamente
+	# Essa parte do código corrige esse problema
+	for anim in Animacao.get_animation_list():
+		Animacao.get_animation(anim).loop_mode = Animation.LOOP_LINEAR
 
 
 func _physics_process(delta):
