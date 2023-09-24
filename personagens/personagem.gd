@@ -1,9 +1,10 @@
 extends CharacterBody3D
 
 
-const GRAVIDADE = 16.0
+const GRAVIDADE = 64.0
 const VELOCIDADE = 16.0
 const VELOCIDADE_GIRO = 2.0 * PI
+const ALTURA_PULO = 24.0
 
 var olhar = Vector2()
 
@@ -28,20 +29,22 @@ func _physics_process(delta):
 	velocity.z = direcao.y * VELOCIDADE
 	
 	# Girar o personagem
-	if is_on_floor():
-		if direcao:
-			olhar = direcao
-			
-			if Animacao.current_animation != "Running_A":
-				Animacao.play("Running_A")
-		elif Animacao.current_animation != "Idle":
-			Animacao.play("Idle")
+	if direcao:
+		olhar = direcao
+		
+		if Animacao.current_animation != "Running_A":
+			Animacao.play("Running_A")
+	elif is_on_floor() and Animacao.current_animation != "Idle":
+		Animacao.play("Idle")
 	
 	Modelo.rotation.y = lerp_angle(Modelo.rotation.y, -olhar.angle() + (PI / 2.0), VELOCIDADE_GIRO * delta)
 	
 	# Aplicar a gravidade ao personagem
 	if is_on_floor():
-		velocity.y = 0.0
+		if Input.is_action_pressed("pulo"):
+			velocity.y = ALTURA_PULO
+		else:
+			velocity.y = 0.0
 	else:
 		# F = m * a (gravidade é uma aceleração, não uma velocidade)
 		velocity.y -= GRAVIDADE * delta
