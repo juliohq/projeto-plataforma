@@ -21,6 +21,14 @@ func _ready():
 		Animacao.get_animation(anim).loop_mode = Animation.LOOP_LINEAR
 
 
+func _unhandled_input(event):
+	if event.is_action_released("pulo") and not is_on_floor() and velocity.y > 0.0:
+		# Consumir o evento e evitar que ele se progague para outros nós
+		get_viewport().set_input_as_handled()
+		
+		velocity.y = 0.0
+
+
 func _physics_process(delta):
 	# Movimentação do personagem
 	var direcao = Input.get_vector("esquerda", "direita", "frente", "tras")
